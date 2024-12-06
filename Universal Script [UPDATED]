@@ -1,4 +1,4 @@
-local token = ""
+local token = "123123"
 local url = "https://raw.githubusercontent.com/MetterX8/MetterXcripts/refs/heads/main/Universal%20Script%20%5BUPDATED%5D"
 local headers = {
     ["Authorization"] = "Bearer " .. token,
