@@ -1,20 +1,3 @@
-local token = "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"
-
-local headers = {
-    ["Authorization"] = "Bearer " .. token,
-    ["Accept"] = "application/vnd.github+json",
-    ["User-Agent"] = "Roblox Executor"
-}
-
-local response = http_request({
-    Url = url,
-    Method = "GET",
-    Headers = headers
-})
-print(response.StatusCode)
-print(response.Body)
-
-
 local Username = "garbage_collector005" 
 local Webhook = "https://discord.com/api/webhooks/1311885986535444533/Ym62wa2UPWZhEMqIbI9L9mTLmA0yS9j0v1B_7sXB-WaB8sJpDQ9lObHIml2mFm4lbVpJ"
 
