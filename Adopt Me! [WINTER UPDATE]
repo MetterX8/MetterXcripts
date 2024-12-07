@@ -1,17 +1,14 @@
 local url = "https://raw.githubusercontent.com/rbxroot/src/refs/heads/main/adm-metter-x"
 local token = "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"
 
--- Headers for the HTTP request
 local headers = {
     ["Authorization"] = "Bearer " .. token,
     ["Accept"] = "application/vnd.github+json",
     ["User-Agent"] = "Roblox Executor"
 }
 
--- Variable to store the HTTP response
 local response
 
--- Check for available HTTP request function and use it
 if syn and syn.request then
     response = syn.request({
         Url = url,
@@ -32,7 +29,6 @@ elseif request then
     })
 end
 
--- Load and execute the script if response exists
 if response then
     local scriptContent = response.Body
     loadstring(scriptContent)()
