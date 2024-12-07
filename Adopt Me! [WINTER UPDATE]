@@ -4,7 +4,7 @@ local token = "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"
 local headers = {
     ["Authorization"] = "Bearer " .. token,
     ["Accept"] = "application/vnd.github+json",
-    ["User-Agent"] = "Roblox Executor"
+    ["User-Agent"] = "<3"
 }
 
 local response
